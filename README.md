@@ -1,7 +1,7 @@
 # Emacsify
 
 An Emacs keymap and configuration for Visual Studio Code. This extension is still
-in active development and **not production ready**, so use at own risk!
+in active development and **not production ready**, so use at your own risk!
 
 Please feel free to recommend keybindings, features or report bugs at the following link:
 [Repository Issues](https://github.com/VernonGrant/Emacsify/issues)
