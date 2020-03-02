@@ -1,23 +1,509 @@
 {
 	"name": "emacsify",
 	"displayName": "Emacsify",
-	"description": "Turn vscode into emacs.",
-	"version": "0.0.1",
+	"description": "An Emacs keymap and configuration for Visual Studio Code.",
+	"icon": "images/icon.png",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
 	"categories": [
-		"Other"
+		"Other",
+		"Keymaps"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:emacsify.motionScrollCenterTopBottom",
+		"onCommand:emacsify.regionSelectionToggle",
+		"onCommand:emacsify.regionSelectionCancel",
+		"onCommand:emacsify.regionSelectionClipboardCutAction",
+		"onCommand:emacsify.regionSelectionClipboardPasteAction",
+		"onCommand:emacsify.regionSelectionClipboardCopyAction"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "emacsify.motionScrollCenterTopBottom",
+				"title": "Emacsify - Scroll Center, Top, Bottom (Uncompleted Command)"
+			},{
+				"command": "emacsify.regionSelectionToggle",
+				"title": "Emacsify - Region Selection - Toggle"
+			},{
+				"command": "emacsify.regionSelectionCancel",
+				"title": "Emacsify - Region Selection - Cancel"
+			},{
+				"command": "emacsify.regionSelectionClipboardCutAction",
+				"title": "Emacsify - Region Selection - Cut"
+			},{
+				"command": "emacsify.regionSelectionClipboardPasteAction",
+				"title": "Emacsify - Region Selection - Past"
+			},{
+				"command": "emacsify.regionSelectionClipboardCopyAction",
+				"title": "Emacsify - Region Selection - Copy"
+			}
+		],
+		"keybindings": [
+			{
+				"//": "====================================== Removed Bindings",
+				"key": "Ctrl+g",
+				"command": ""
+			},
+			{
+				"key": "cmd+up",
+				"command": "",
+				"when": "textInputFocus"
+			},
+			{
+				"key": "cmd+down",
+				"command": "",
+				"when": "textInputFocus"
+			},
+			{
+				"key": "cmd+x",
+				"command": "",
+				"when": "textInputFocus && !editorReadonly"
+			},
+			{
+				"key": "cmd+v",
+				"command": "",
+				"when": "textInputFocus && !editorReadonly"
+			},
+			{
+				"key": "cmd+c",
+				"command": "",
+				"when": "textInputFocus"
+			},
+			{
+				"key": "ctrl+w",
+				"command": ""
+			},
+			{
+				"key": "shift+cmd+p",
+				"command": ""
+			},
+
+			{
+				"//": "====================================== Motion",
+				"key": "ctrl+a",
+				"command": "cursorLineStart",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+e",
+				"command": "cursorLineEnd",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+m",
+				"command": "cursorHome",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+p",
+				"command": "cursorUp",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+n",
+				"command": "cursorDown",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+f",
+				"command": "cursorRight",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+b",
+				"command": "cursorLeft",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+f",
+				"command": "cursorWordEndRight",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+b",
+				"command": "cursorWordStartLeft",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+x [",
+				"command": "cursorTop",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+x ]",
+				"command": "cursorBottom",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+v",
+				"command": "cursorPageUp",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+v",
+				"command": "cursorPageDown",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+l",
+				"command": "emacsify.motionScrollCenterTopBottom",
+				"when": "textInputFocus"
+			},
+			{
+				"key": "alt-g g",
+				"command": "workbench.action.gotoLine"
+			},
+
+			{
+				"//": "====================================== Selection",
+				"key": "ctrl+space",
+				"command": "emacsify.regionSelectionToggle",
+				"when": "textInputFocus"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "emacsify.regionSelectionCancel",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+a",
+				"command": "cursorHomeSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+e",
+				"command": "cursorEndSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+m",
+				"command": "cursorHomeSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+p",
+				"command": "cursorUpSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+n",
+				"command": "cursorDownSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+f",
+				"command": "cursorRightSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+b",
+				"command": "cursorLeftSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+f",
+				"command": "cursorWordEndRightSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+b",
+				"command": "cursorWordStartLeftSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+x [",
+				"command": "cursorTopSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+x ]",
+				"command": "cursorBottomSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+v",
+				"command": "cursorPageUpSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+v",
+				"command": "cursorPageDownSelect",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+w",
+				"command": "emacsify.regionSelectionClipboardCutAction",
+				"when": "textInputFocus && !editorReadonly && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+y",
+				"command": "emacsify.regionSelectionClipboardPasteAction",
+				"when": "textInputFocus && !editorReadonly && emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+w",
+				"command": "emacsify.regionSelectionClipboardCopyAction",
+				"when": "textInputFocus && emacsifyRegionSelectionMode"
+			},
+
+
+			{
+				"//": "====================================== Killing and Deleting",
+				"key": "ctrl+d",
+				"command": "deleteRight",
+				"when": "textInputFocus && !editorReadonly && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+- ctrl+d",
+				"command": "deleteLeft",
+				"when": "textInputFocus && !editorReadonly && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+d",
+				"command": "deleteWordRight",
+				"when": "textInputFocus && !editorReadonly && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+- alt+d",
+				"command": "deleteWordLeft",
+				"when": "textInputFocus && !editorReadonly && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+k",
+				"command": "deleteAllRight",
+				"when": "textInputFocus && !editorReadonly && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+- ctrl+k",
+				"command": "deleteAllLeft",
+				"when": "textInputFocus && !editorReadonly && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+w",
+				"command": "editor.action.clipboardCutAction",
+				"when": "textInputFocus && !editorReadonly && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+y",
+				"command": "editor.action.clipboardPasteAction",
+				"when": "textInputFocus && !editorReadonly && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "alt+w",
+				"command": "editor.action.clipboardCopyAction",
+				"when": "textInputFocus && !emacsifyRegionSelectionMode"
+			},
+
+			{
+				"//": "====================================== Incremental Search",
+				"key": "ctrl+g",
+				"command": "search.action.cancel",
+				"when": "listFocus && searchViewletVisible && !inputFocus"
+			},
+
+			{
+				"//": "====================================== Editing",
+				"key": "alt+;",
+				"command": "editor.action.commentLine",
+				"when": "editorTextFocus && !editorReadonly"
+			},
+
+			{
+				"//": "====================================== Files",
+				"key": "ctrl+x ctrl+f",
+				"command": "workbench.action.quickOpen"
+			},
+			{
+				"key": "ctrl+x ctrl+s",
+				"command": "workbench.action.files.save"
+			},
+			{
+				"key": "ctrl+x s",
+				"command": "workbench.action.files.saveAll"
+			},
+			{
+				"key": "ctrl+x ctrl+w",
+				"command": "workbench.action.files.saveAs"
+			},
+
+			{
+				"//": "====================================== Buffers",
+				"key": "Ctrl+x b",
+				"command": "workbench.action.switchWindow"
+			},
+			{
+				"key": "ctrl+x k",
+				"command": "workbench.action.closeActiveEditor"
+			},
+
+			{
+				"//": "====================================== Workspace Actions",
+				"key": "ctrl+g",
+				"command": "workbench.action.closeQuickOpen",
+				"when": "inQuickOpen"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "workbench.action.hideComment",
+				"when": "commentEditorFocused"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "removeSecondaryCursors",
+				"when": "editorHasMultipleSelections && textInputFocus"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "list.clear",
+				"when": "listFocus && listHasSelectionOrFocus && !inputFocus"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "leaveSnippet",
+				"when": "editorTextFocus && inSnippetMode"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "leaveEditorMessage",
+				"when": "messageVisible"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "hideSuggestWidget",
+				"when": "suggestWidgetVisible && textInputFocus"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "filesExplorer.cancelCut",
+				"when": "explorerResourceCut && explorerViewletVisible && filesExplorerFocus && !inputFocus"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "editor.gotoNextSymbolFromResult.cancel",
+				"when": "hasSymbols"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "editor.closeCallHierarchy",
+				"when": "callHierarchyVisible && !config.editor.stablePeek"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "editor.cancelOperation",
+				"when": "cancellableOperation"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "editor.action.webvieweditor.hideFind",
+				"when": "webviewFindWidgetVisible && !editorFocus && activeEditor == 'WebviewEditor'"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "closeReplaceInFilesWidget",
+				"when": "replaceInputBoxFocus && searchViewletVisible"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "closeReferenceSearch",
+				"when": "referenceSearchVisible && !config.editor.stablePeek"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "closeParameterHints",
+				"when": "editorFocus && parameterHintsVisible"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "closeMarkersNavigation",
+				"when": "editorFocus && markersNavigationVisible"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "closeFindWidget",
+				"when": "editorFocus && findWidgetVisible"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "closeDirtyDiff",
+				"when": "dirtyDiffVisible"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "closeBreakpointWidget",
+				"when": "breakpointWidgetVisible && textInputFocus"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "closeAccessibilityHelp",
+				"when": "accessibilityHelpWidgetVisible && editorFocus"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "cancelSelection",
+				"when": "editorHasSelection && textInputFocus && !emacsifyRegionSelectionMode"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "cancelRenameInput",
+				"when": "editorFocus && renameInputVisible"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "breadcrumbs.selectEditor",
+				"when": "breadcrumbsActive && breadcrumbsVisible"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "workbench.action.terminal.hideFindWidget",
+				"when": "terminalFindWidgetVisible && terminalFocus"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "workbench.action.terminal.navigationModeExit",
+				"when": "accessibilityModeEnabled && terminalA11yTreeFocus"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "workbench.action.terminal.clearSelection",
+				"when": "terminalFocus && terminalTextSelected && !terminalFindWidgetVisible"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "notifications.hideList",
+				"when": "notificationCenterVisible"
+			},
+			{
+				"key": "ctrl+g",
+				"command": "workbench.action.hideInterfaceOverview",
+				"when": "interfaceOverviewVisible"
+			},
+			{
+				"key": "alt+x",
+				"command": "workbench.action.showCommands"
+			},
+			{
+				"key": "Ctrl+x 0",
+				"command": "workbench.action.closeEditorsInGroup"
+			},
+			{
+				"key": "Ctrl+x 1",
+				"command": "workbench.action.closeEditorsInOtherGroups"
+			},
+			{
+				"key": "Ctrl+x 2",
+				"command": "workbench.action.splitEditorUp"
+			},
+			{
+				"key": "Ctrl+x 3",
+				"command": "workbench.action.splitEditorRight"
+			},
+			{
+				"key": "Ctrl+x o",
+				"command": "workbench.action.nextEditor"
 			}
 		]
 	},

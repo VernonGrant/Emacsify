@@ -2,29 +2,122 @@
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+// region selection
+let regionSelectionModeState = false;
 
 /**
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "emacsify" is now active!');
+    // /\/\ TODO | IMPORTANCE = 5 | CATEGORY = Software Design
+    // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    // Move commands into there own respective modules
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('extension.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
+    // /\/\ TODO | IMPORTANCE = 5 | CATEGORY = Software Design
+    // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    // Move region selection mode to it's own module.
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World!');
-	});
+    // Temp solution for emacs marking system.
+    var regionSelectionToggle = vscode.commands.registerCommand('emacsify.regionSelectionToggle', function() {
+        switch (regionSelectionModeState) {
+            case false:
+                regionSelectionModeState = true;
+                vscode.commands.executeCommand('setContext', 'emacsifyRegionSelectionMode', true);
+                vscode.window.setStatusBarMessage("Selection Mode: Enabled");
+                break;
+            case true:
+                // clear selection
+                let position = vscode.window.activeTextEditor.selection.active;
+                vscode.window.activeTextEditor.selection = new vscode.Selection(position, position);
 
-	context.subscriptions.push(disposable);
+                // disable region selection
+                regionSelectionModeState = false;
+                vscode.commands.executeCommand('setContext', 'emacsifyRegionSelectionMode', false);
+                vscode.window.setStatusBarMessage("Selection Mode: Disabled");
+                break;
+        }
+    });
+    context.subscriptions.push(regionSelectionToggle);
+
+    // Cancel region selection.
+    var regionSelectionCancel = vscode.commands.registerCommand('emacsify.regionSelectionCancel', function() {
+
+        // clear selection
+        let position = vscode.window.activeTextEditor.selection.active;
+        vscode.window.activeTextEditor.selection = new vscode.Selection(position, position);
+
+        // disable region selection
+        regionSelectionModeState = false;
+        vscode.commands.executeCommand('setContext', 'emacsifyRegionSelectionMode', false);
+        vscode.window.setStatusBarMessage("Selection Mode: Disabled");
+    });
+    context.subscriptions.push(regionSelectionCancel);
+
+    // Region selection cut
+    var regionSelectionClipboardCutAction = vscode.commands.registerCommand('emacsify.regionSelectionClipboardCutAction', function() {
+        // perform cut
+        vscode.commands.executeCommand('editor.action.clipboardCutAction');
+
+        // clear selection
+        let position = vscode.window.activeTextEditor.selection.active;
+        vscode.window.activeTextEditor.selection = new vscode.Selection(position, position);
+
+        // disable region selection
+        regionSelectionModeState = false;
+        vscode.commands.executeCommand('setContext', 'emacsifyRegionSelectionMode', false);
+        vscode.window.setStatusBarMessage("Selection Mode: Disabled");
+    });
+    context.subscriptions.push(regionSelectionClipboardCutAction);
+
+    // Region selection Past
+    var regionSelectionClipboardPasteAction = vscode.commands.registerCommand('emacsify.regionSelectionClipboardPasteAction', function() {
+        // clear selection
+        let position = vscode.window.activeTextEditor.selection.active;
+        vscode.window.activeTextEditor.selection = new vscode.Selection(position, position);
+
+        // perform past
+        vscode.commands.executeCommand('editor.action.clipboardPasteAction');
+
+        // disable region selection
+        regionSelectionModeState = false;
+        vscode.commands.executeCommand('setContext', 'emacsifyRegionSelectionMode', false);
+        vscode.window.setStatusBarMessage("Selection Mode: Disabled");
+    });
+    context.subscriptions.push(regionSelectionClipboardPasteAction);
+
+
+    // Region selection Copy
+    var regionSelectionClipboardCopyAction = vscode.commands.registerCommand('emacsify.regionSelectionClipboardCopyAction', function() {
+        // perform copy
+        vscode.commands.executeCommand('editor.action.clipboardCopyAction');
+
+        // clear selection
+        let position = vscode.window.activeTextEditor.selection.active;
+        vscode.window.activeTextEditor.selection = new vscode.Selection(position, position);
+
+        // disable region selection
+        regionSelectionModeState = false;
+        vscode.commands.executeCommand('setContext', 'emacsifyRegionSelectionMode', false);
+        vscode.window.setStatusBarMessage("Selection Mode: Disabled");
+    });
+    context.subscriptions.push(regionSelectionClipboardCopyAction);
+
+
+    // /\/\ TODO | IMPORTANCE = 5 | CATEGORY = Feature
+    // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    // Extend this command to support the default emacs behaviour
+
+    // Scroll window relative to cursor position to the center, top and bottom.
+    let motionScrollCenterTopBottom = vscode.commands.registerCommand('emacsify.motionScrollCenterTopBottom', function () {
+        let cursorLineNumber = vscode.window.activeTextEditor.selection.start.line;
+
+        vscode.commands.executeCommand("revealLine", {
+            lineNumber: cursorLineNumber,
+            at: "center"
+        });
+    });
+    context.subscriptions.push(motionScrollCenterTopBottom);
 }
 exports.activate = activate;
 
@@ -32,6 +125,6 @@ exports.activate = activate;
 function deactivate() {}
 
 module.exports = {
-	activate,
-	deactivate
+    activate,
+    deactivate
 }

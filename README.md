@@ -1,65 +1,108 @@
-# emacsify README
+# Emacsify
 
-This is the README for your extension "emacsify". After writing up a brief description, we recommend including the following sections.
+An Emacs keymap and configuration for Visual Studio Code. This extension is still
+in active development and **not production ready**, so use at own risk!
 
-## Features
+Please feel free to recommend keybindings, features or report bugs at the following link:
+[Repository Issues](https://github.com/VernonGrant/Emacsify/issues)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Current Key Bindings
 
-For example if there is an image subfolder under your extension project workspace:
+### Motion
 
-\!\[feature X\]\(images/feature-x.png\)
+Key                       | Implemented         | Description
+------------------------- |---------------------| -------------------------
+`Ctrl+a`                  | ✓                   | go to line beginning
+`Ctrl+e`                  | ✓                   | go to line end
+`Alt+m`                   | ✓                   | back to indentation
+`Ctrl+p`                  | ✓                   | line up
+`Ctrl+n`                  | ✓                   | line down
+`Ctrl+f`                  | ✓                   | character forward
+`Ctrl+b`                  | ✓                   | character backward
+`Alt+f`                   | ✓                   | go to end of word
+`Alt+b`                   | ✓                   | go to start of word
+`Alt+a`                   |                     | go one sentence backward
+`Alt+e`                   |                     | go one sentence forward
+`Alt+{`                   |                     | go one paragraph backward
+`Alt+}`                   |                     | go one paragraph forward
+`Alt+Shift+<`             |                     | go to buffer beginning
+`Alt+Shift+>`             |                     | go to buffer end
+`Ctrl+x [`                | ✓                   | go to page top
+`Ctrl+x ]`                | ✓                   | go to page bottom
+`Alt+v`                   | ✓                   | scroll to next screen
+`Ctrl+v`                  | ✓                   | scroll to previous screen
+`Ctrl+l`                  | Partial             | scroll current line to center, top, bottom
+`Alt+g g`                 | ✓                   | goto line
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### Killing and Deleting
 
-## Requirements
+Key                       | Implemented         | Description
+------------------------- |---------------------| -------------------------
+`Ctrl+d`                  | ✓                   | delete character forward.
+`Ctrl+- Ctrl+d`           | ✓                   | delete character backward.
+`backspace`               | ✓                   | delete character backward.
+`Alt+d`                   | ✓                   | delete word forward.
+`Alt+- Alt+d`             | ✓                   | delete word backward.
+`Ctrl+k`                  | ✓                   | delete rest of line forward.
+`Ctrl+- Ctrl+k`           | ✓                   | delete rest of line backward.
+`Ctrl+w`                  | ✓                   | cut the selected region.
+`Alt+w`                   | ✓                   | copy the selected region.
+`Alt+k`                   |                     | delete sentence forward.
+`Alt+- Alt+k`             |                     | delete sentence backward.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Incremental Search
+Key                       | Implemented         | Description
+------------------------- |---------------------| -------------------------
+`Ctrl+s`                  |                     | search forward
+`Ctrl+r`                  |                     | search backward
+`Ctrl+Alt+s`              |                     | regular expression search
+`Ctrl+Alt+r`              |                     | reverse regular expression search
+`Alt+p`                   |                     | select previous search string
+`Alt+n`                   |                     | select next later search string
+`enter`                   |                     | exit incremental search
+`delete`                  |                     | undo effect of last character
+`Ctrl+g`                  | ✓                   | abort current search
 
-## Extension Settings
+### Editing
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Key                       | Implemented         | Description
+------------------------- |---------------------| -------------------------
+`Alt+;`                   | ✓                   | comment/toggle comment
 
-For example:
+### Selection
 
-This extension contributes the following settings:
+Key                       | Implemented         | Description
+------------------------- |---------------------| -------------------------
+`Ctrl+space`              | ✓                   | start region selection.
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+### Files
 
-## Known Issues
+Key                       | Implemented         | Description
+------------------------- |---------------------| -------------------------
+`Ctrl+x Ctrl+f`           | ✓                   | open file
+`Ctrl+x Ctrl+s`           | ✓                   | save file
+`Ctrl+x s`                | ✓                   | save all files
+`Ctrl+x Ctrl+w`           | ✓                   | save as new file
+`Ctrl+x i`                |                     | insert contents of a different file into the current file
+`Ctrl+x Ctrl+v`           |                     | replace this file with the file you really want
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### Buffers
 
-## Release Notes
+Key                       | Implemented         | Description
+------------------------- |---------------------| -------------------------
+`Ctrl+x b`                | ✓                   | select a new buffer
+`Ctrl+x k`                | ✓                   | kill a buffer
+`Ctrl+x Ctrl+b`           |                     | list all buffers
 
-Users appreciate release notes as you update your extension.
+### Workspace Actions
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Key                       | Implemented         | Description
+------------------------- |---------------------| -------------------------
+`Ctrl+g`                  | ✓                   | abort or escape things
+`Alt+x`                   | ✓                   | show commands
+`Ctrl+x 1`                | ✓                   | close other windows
+`Ctrl+x 2`                | ✓                   | split window above
+`Ctrl+x 0`                | ✓                   | delete this window
+`Ctrl+x 3`                | ✓                   | split window, side by side
+`Ctrl+Alt+v`              |                     | scroll other window
+`Ctrl+x o`                | ✓                   | switch cursor to another window
