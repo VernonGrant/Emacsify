@@ -54,6 +54,7 @@ Key                       | Implemented         | Description
 `Alt+- Alt+k`             |                     | delete sentence backward.
 
 ### Incremental Search
+
 Key                       | Implemented         | Description
 ------------------------- |---------------------| -------------------------
 `Ctrl+s`                  | Partial             | search forward
@@ -108,5 +109,9 @@ Key                       | Implemented         | Description
 `Ctrl+x 2`                | ✓                   | split window above
 `Ctrl+x 0`                | ✓                   | delete this window
 `Ctrl+x 3`                | ✓                   | split window, side by side
-`Ctrl+Alt+v`              |                     | scroll other window
 `Ctrl+x o`                | ✓                   | switch cursor to another window
+`Ctrl+Alt+v`              |                     | scroll other window
+
+## Known Issues
+
+- When creating a vertical split, the cursor should say in the current window.

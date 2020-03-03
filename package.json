@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -256,7 +256,21 @@
                 "command": "emacsify.regionSelectionClipboardCopyAction",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
-
+            {
+                "key": "backspace",
+                "command": "emacsify.regionSelectionClipboardCutAction",
+                "when": "textInputFocus && emacsifyRegionSelectionMode"
+            },
+            {
+                "key": "ctrl+d",
+                "command": "emacsify.regionSelectionClipboardCutAction",
+                "when": "textInputFocus && emacsifyRegionSelectionMode"
+            },
+            {
+                "key": "alt+d",
+                "command": "emacsify.regionSelectionClipboardCutAction",
+                "when": "textInputFocus && emacsifyRegionSelectionMode"
+            },
 
             {
                 "//": "====================================== Killing and Deleting",

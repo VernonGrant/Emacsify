@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2020-03-03
+- Region selection now automatically becomes disabled on selection delete.
+
 ## [1.0.2] - 2020-03-03
 - Fixed window split navigation (ctrl+x o).
 - Added basic search key bindings.
