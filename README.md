@@ -34,7 +34,7 @@ Key                       | Implemented         | Description
 `Ctrl+x ]`                | ✓                   | go to page bottom
 `Alt+v`                   | ✓                   | scroll to next screen
 `Ctrl+v`                  | ✓                   | scroll to previous screen
-`Ctrl+l`                  | Partial             | scroll current line to center, top, bottom
+`Ctrl+l`                  | ✓                   | scroll current line to center, top, bottom
 `Alt+g g`                 | ✓                   | goto line
 
 ### Killing and Deleting

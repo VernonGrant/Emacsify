@@ -98,14 +98,66 @@ function activate(context) {
 
     // Scroll window relative to cursor position to the center, top and bottom.
     let motionScrollCenterTopBottom = vscode.commands.registerCommand('emacsify.motionScrollCenterTopBottom', function () {
+
+        // /\/\ TODO | IMPORTANCE = 5 | CATEGORY = Software Design
+        // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        // Refactor this mess/prototype.
+
         let cursorLineNumber = vscode.window.activeTextEditor.selection.start.line;
+        let visibleRange = vscode.window.activeTextEditor.visibleRanges;
 
-        // return vscode.window.activeTextEditor.selection.active.line == vscode.window.activeTextEditor.document.lineCount - 1;
+        if (visibleRange.length > 0) {
 
-        vscode.commands.executeCommand("revealLine", {
-            lineNumber: cursorLineNumber,
-            at: "center"
-        });
+            let startingLineNumber = visibleRange[0].start.line;
+            let endingLineNumber = visibleRange[0].end.line;
+            let rangeSize = endingLineNumber - startingLineNumber;
+            let centerLineNumber = startingLineNumber  + Math.floor(rangeSize/2);
+
+            let cursorAtTop = startingLineNumber == cursorLineNumber ||
+            startingLineNumber - 1 == cursorLineNumber ||
+            startingLineNumber + 1 == cursorLineNumber;
+
+            let cursorAtBottom = endingLineNumber == cursorLineNumber ||
+            endingLineNumber - 1 == cursorLineNumber ||
+            endingLineNumber + 1 == cursorLineNumber;
+
+            let cursorAtCenter = centerLineNumber == cursorLineNumber ||
+            centerLineNumber - 1 == cursorLineNumber ||
+            centerLineNumber + 1 == cursorLineNumber;
+
+            // is top
+            if (cursorAtTop) {
+                vscode.commands.executeCommand("revealLine", {
+                    lineNumber: cursorLineNumber,
+                    at: "bottom",
+                });
+            }
+
+            // is bottom
+            if (cursorAtBottom) {
+                vscode.commands.executeCommand("revealLine", {
+                    lineNumber: cursorLineNumber,
+                    at: "center"
+                });
+            }
+
+            // is center
+            if (cursorAtCenter) {
+                vscode.commands.executeCommand("revealLine", {
+                    lineNumber: cursorLineNumber,
+                    at: "top"
+                });
+            }
+
+            // is center
+            if (cursorAtTop == false && cursorAtBottom == false && cursorAtCenter == false) {
+                vscode.commands.executeCommand("revealLine", {
+                    lineNumber: cursorLineNumber,
+                    at: "center"
+                });
+            }
+
+        }
     });
     context.subscriptions.push(motionScrollCenterTopBottom);
 }

@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.4] - 2020-03-03
+- Mapped open buffer binding (ctrl+x b) to standard quick open command.
+- Added temporary solution for (ctrl+l) scroll current line to center, top, bottom.
+
 ## [1.0.3] - 2020-03-03
 - Region selection now automatically becomes disabled on selection delete.
 
