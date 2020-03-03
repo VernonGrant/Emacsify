@@ -28,8 +28,7 @@ function activate(context) {
                 break;
             case true:
                 // clear selection
-                let position = vscode.window.activeTextEditor.selection.active;
-                vscode.window.activeTextEditor.selection = new vscode.Selection(position, position);
+                vscode.commands.executeCommand('cancelSelection');
 
                 // disable region selection
                 regionSelectionModeState = false;
@@ -42,10 +41,8 @@ function activate(context) {
 
     // Cancel region selection.
     var regionSelectionCancel = vscode.commands.registerCommand('emacsify.regionSelectionCancel', function() {
-
         // clear selection
-        let position = vscode.window.activeTextEditor.selection.active;
-        vscode.window.activeTextEditor.selection = new vscode.Selection(position, position);
+        vscode.commands.executeCommand('cancelSelection');
 
         // disable region selection
         regionSelectionModeState = false;
@@ -59,10 +56,6 @@ function activate(context) {
         // perform cut
         vscode.commands.executeCommand('editor.action.clipboardCutAction');
 
-        // clear selection
-        let position = vscode.window.activeTextEditor.selection.active;
-        vscode.window.activeTextEditor.selection = new vscode.Selection(position, position);
-
         // disable region selection
         regionSelectionModeState = false;
         vscode.commands.executeCommand('setContext', 'emacsifyRegionSelectionMode', false);
@@ -72,10 +65,6 @@ function activate(context) {
 
     // Region selection Past
     var regionSelectionClipboardPasteAction = vscode.commands.registerCommand('emacsify.regionSelectionClipboardPasteAction', function() {
-        // clear selection
-        let position = vscode.window.activeTextEditor.selection.active;
-        vscode.window.activeTextEditor.selection = new vscode.Selection(position, position);
-
         // perform past
         vscode.commands.executeCommand('editor.action.clipboardPasteAction');
 
@@ -93,8 +82,7 @@ function activate(context) {
         vscode.commands.executeCommand('editor.action.clipboardCopyAction');
 
         // clear selection
-        let position = vscode.window.activeTextEditor.selection.active;
-        vscode.window.activeTextEditor.selection = new vscode.Selection(position, position);
+        vscode.commands.executeCommand('cancelSelection');
 
         // disable region selection
         regionSelectionModeState = false;
@@ -111,6 +99,8 @@ function activate(context) {
     // Scroll window relative to cursor position to the center, top and bottom.
     let motionScrollCenterTopBottom = vscode.commands.registerCommand('emacsify.motionScrollCenterTopBottom', function () {
         let cursorLineNumber = vscode.window.activeTextEditor.selection.start.line;
+
+        // return vscode.window.activeTextEditor.selection.active.line == vscode.window.activeTextEditor.document.lineCount - 1;
 
         vscode.commands.executeCommand("revealLine", {
             lineNumber: cursorLineNumber,
