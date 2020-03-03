@@ -1,7 +1,10 @@
 # Emacsify
 
-An Emacs keymap and configuration for Visual Studio Code. This extension is still
-in active development and **not production ready**, so use at your own risk!
+An Emacs keymap and configuration for Visual Studio Code.
+
+## Not Production Ready
+
+This extension is still in active development, so use at your own risk!
 
 Please feel free to recommend keybindings, features or report bugs at the following link:
 [Repository Issues](https://github.com/VernonGrant/Emacsify/issues)
@@ -53,13 +56,13 @@ Key                       | Implemented         | Description
 ### Incremental Search
 Key                       | Implemented         | Description
 ------------------------- |---------------------| -------------------------
-`Ctrl+s`                  |                     | search forward
+`Ctrl+s`                  | Partial             | search forward
 `Ctrl+r`                  |                     | search backward
 `Ctrl+Alt+s`              |                     | regular expression search
 `Ctrl+Alt+r`              |                     | reverse regular expression search
 `Alt+p`                   |                     | select previous search string
 `Alt+n`                   |                     | select next later search string
-`enter`                   |                     | exit incremental search
+`enter`                   | ✓                   | exit incremental search
 `delete`                  |                     | undo effect of last character
 `Ctrl+g`                  | ✓                   | abort current search
 
@@ -68,6 +71,7 @@ Key                       | Implemented         | Description
 Key                       | Implemented         | Description
 ------------------------- |---------------------| -------------------------
 `Alt+;`                   | ✓                   | comment/toggle comment
+`Ctrl+/`                  | Partial             | undo
 
 ### Selection
 

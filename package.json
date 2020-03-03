@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -311,12 +311,36 @@
                 "command": "search.action.cancel",
                 "when": "listFocus && searchViewletVisible && !inputFocus"
             },
+            {
+                "key": "ctrl+s",
+                "command": "actions.find"
+            },
+            {
+                "key": "ctrl+s",
+                "command": "editor.action.nextMatchFindAction",
+                "when": "editorFocus && findInputFocussed"
+            },
+            {
+                "key": "enter",
+                "command": "closeFindWidget",
+                "when": "editorFocus && findWidgetVisible"
+            },
+            {
+                "key": "ctrl+g",
+                "command": "closeFindWidget",
+                "when": "editorFocus && findWidgetVisible"
+            },
 
             {
                 "//": "====================================== Editing",
                 "key": "alt+;",
                 "command": "editor.action.commentLine",
                 "when": "editorTextFocus && !editorReadonly"
+            },
+            {
+                "key": "ctrl+/",
+                "command": "undo",
+                "when": "textInputFocus && !editorReadonly"
             },
 
             {
@@ -510,7 +534,7 @@
             },
             {
                 "key": "Ctrl+x o",
-                "command": "workbench.action.nextEditor"
+                "command": "workbench.action.focusNextGroup"
             }
         ]
     },
