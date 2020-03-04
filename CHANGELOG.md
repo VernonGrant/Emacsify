@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.7] - 2020-03-04
+- Corrected region, copy command.
+
 ## [1.0.6] - 2020-03-04
 - Corrected region, disable command.
 
