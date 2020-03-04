@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -21,10 +21,14 @@
     "activationEvents": [
         "onCommand:emacsify.motionScrollCenterTopBottom",
         "onCommand:emacsify.regionSelectionToggle",
-        "onCommand:emacsify.regionSelectionCancel",
+        "onCommand:emacsify.regionSelectionDisable",
         "onCommand:emacsify.regionSelectionClipboardCutAction",
         "onCommand:emacsify.regionSelectionClipboardPasteAction",
-        "onCommand:emacsify.regionSelectionClipboardCopyAction"
+        "onCommand:emacsify.regionSelectionClipboardCopyAction",
+        "onCommand:emacsify.editingCapitalizeWordForward",
+        "onCommand:emacsify.editingCapitalizeWordBackward",
+        "onCommand:emacsify.editingLowercaseWordForward",
+        "onCommand:emacsify.editingLowercaseWordBackward"
     ],
     "main": "./extension.js",
     "contributes": {
@@ -36,17 +40,8 @@
                 "command": "emacsify.regionSelectionToggle",
                 "title": "Emacsify - Region Selection - Toggle"
             },{
-                "command": "emacsify.regionSelectionCancel",
+                "command": "emacsify.regionSelectionDisable",
                 "title": "Emacsify - Region Selection - Cancel"
-            },{
-                "command": "emacsify.regionSelectionClipboardCutAction",
-                "title": "Emacsify - Region Selection - Cut"
-            },{
-                "command": "emacsify.regionSelectionClipboardPasteAction",
-                "title": "Emacsify - Region Selection - Past"
-            },{
-                "command": "emacsify.regionSelectionClipboardCopyAction",
-                "title": "Emacsify - Region Selection - Copy"
             }
         ],
         "keybindings": [
@@ -66,26 +61,7 @@
                 "when": "textInputFocus"
             },
             {
-                "key": "cmd+x",
-                "command": "",
-                "when": "textInputFocus && !editorReadonly"
-            },
-            {
-                "key": "cmd+v",
-                "command": "",
-                "when": "textInputFocus && !editorReadonly"
-            },
-            {
-                "key": "cmd+c",
-                "command": "",
-                "when": "textInputFocus"
-            },
-            {
                 "key": "ctrl+w",
-                "command": ""
-            },
-            {
-                "key": "shift+cmd+p",
                 "command": ""
             },
 
@@ -173,7 +149,7 @@
             },
             {
                 "key": "ctrl+g",
-                "command": "emacsify.regionSelectionCancel",
+                "command": "emacsify.regionSelectionDisable",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
             {
@@ -354,6 +330,26 @@
             {
                 "key": "ctrl+/",
                 "command": "undo",
+                "when": "textInputFocus && !editorReadonly"
+            },
+            {
+                "key": "alt+c",
+                "command": "emacsify.editingCapitalizeWordForward",
+                "when": "textInputFocus && !editorReadonly"
+            },
+            {
+                "key": "alt+- alt+c",
+                "command": "emacsify.editingCapitalizeWordBackward",
+                "when": "textInputFocus && !editorReadonly"
+            },
+            {
+                "key": "alt+l",
+                "command": "emacsify.editingLowercaseWordForward",
+                "when": "textInputFocus && !editorReadonly"
+            },
+            {
+                "key": "alt+- alt+l",
+                "command": "emacsify.editingLowercaseWordBackward",
                 "when": "textInputFocus && !editorReadonly"
             },
 

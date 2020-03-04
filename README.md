@@ -72,7 +72,13 @@ Key                       | Implemented         | Description
 Key                       | Implemented         | Description
 ------------------------- |---------------------| -------------------------
 `Alt+;`                   | ✓                   | comment/toggle comment
-`Ctrl+/`                  | Partial             | undo
+`Ctrl+/`                  | Partial|Bug         | undo
+`Alt+c`                   | ✓                   | capitalize word forward
+`Alt+- Alt+c`             | ✓                   | capitalize word backward
+`Alt+l`                   | ✓                   | lowercase word forward
+`Alt+- Alt+l`             | ✓                   | lowercase word backward
+`Alt+u`                   |                     | uppercase word forward
+`Alt+- Alt+u`             |                     | uppercase word backward
 
 ### Selection
 
@@ -112,6 +118,14 @@ Key                       | Implemented         | Description
 `Ctrl+x o`                | ✓                   | switch cursor to another window
 `Ctrl+Alt+v`              |                     | scroll other window
 
+## Next Up
+
+- (ctrl+x left) go to previous file in group
+- (ctrl+x right) go to next file in group
+- (ctrl+tab) display available auto completions
+
 ## Known Issues
 
+- When commenting out an selected region, the region selection does not automatically disable.
 - When creating a vertical split, the cursor should say in the current window.
+- When pressing the undo keybinding (ctrl+/) there is a beep sound.
