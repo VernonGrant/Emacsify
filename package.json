@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -25,6 +25,7 @@
         "onCommand:emacsify.regionSelectionClipboardCutAction",
         "onCommand:emacsify.regionSelectionClipboardPasteAction",
         "onCommand:emacsify.regionSelectionClipboardCopyAction",
+        "onCommand:emacsify.regionSelectionClipboardDeleteAction",
         "onCommand:emacsify.editingCapitalizeWordForward",
         "onCommand:emacsify.editingCapitalizeWordBackward",
         "onCommand:emacsify.editingLowercaseWordForward",
@@ -234,7 +235,7 @@
             },
             {
                 "key": "backspace",
-                "command": "emacsify.regionSelectionClipboardCutAction",
+                "command": "emacsify.regionSelectionDeleteAction",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
             {
@@ -351,6 +352,26 @@
                 "key": "alt+- alt+l",
                 "command": "emacsify.editingLowercaseWordBackward",
                 "when": "textInputFocus && !editorReadonly"
+            },
+            {
+                "key": "alt+tab",
+                "command": "editor.action.triggerSuggest",
+                "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+            },
+            {
+                "key": "alt+tab",
+                "command": "toggleSuggestionDetails",
+                "when": "suggestWidgetVisible && textInputFocus"
+            },
+            {
+                "key": "ctrl+n",
+                "command": "selectNextSuggestion",
+                "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+            },
+            {
+                "key": "ctrl+p",
+                "command": "selectPrevSuggestion",
+                "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
             },
 
             {

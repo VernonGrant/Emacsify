@@ -79,6 +79,10 @@ Key                       | Implemented         | Description
 `Alt+- Alt+l`             | ✓                   | lowercase word backward
 `Alt+u`                   |                     | uppercase word forward
 `Alt+- Alt+u`             |                     | uppercase word backward
+`Alt+tab`                 | ✓                   | trigger suggest
+`Alt+tab`                 | addition            | show suggestion details
+`Ctrl+n`                  | ✓                   | next suggestion
+`Ctrl+p`                  | ✓                   | previous suggestion
 
 ### Selection
 
@@ -126,6 +130,8 @@ Key                       | Implemented         | Description
 
 ## Known Issues
 
+- Capitalization sometimes skips words.
+- Save command does not always work.
 - When commenting out an selected region, the region selection does not automatically disable.
 - When creating a vertical split, the cursor should say in the current window.
 - When pressing the undo keybinding (ctrl+/) there is a beep sound.

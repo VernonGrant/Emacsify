@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.8] - 2020-03-05
+- Region selection now preforms an delete instead of cut when backspace is pressed.
+- Region selection cut, copy will only function if there is an selection range.
+- Added keybinding (Alt+tab) to trigger suggestions.
+- Added keybinding (Alt+tab) to trigger suggestions details.
+- Added keybinding (Ctrl+n) to navigate to next suggestion.
+- Added keybinding (Ctrl+p) to navigate to prev suggestion.
+
 ## [1.0.7] - 2020-03-04
 - Corrected region, copy command.
 
