@@ -28,8 +28,8 @@ Key                       | Implemented         | Description
 `Alt+e`                   |                     | go one sentence forward
 `Alt+{`                   |                     | go one paragraph backward
 `Alt+}`                   |                     | go one paragraph forward
-`Alt+Shift+<`             |                     | go to buffer beginning
-`Alt+Shift+>`             |                     | go to buffer end
+`Alt+<`                   | ✓                   | go to page top
+`Alt+>`                   | ✓                   | go to page bottom
 `Ctrl+x [`                | ✓                   | go to page top
 `Ctrl+x ]`                | ✓                   | go to page bottom
 `Alt+v`                   | ✓                   | scroll to next screen
@@ -83,6 +83,8 @@ Key                       | Implemented         | Description
 `Alt+tab`                 | addition            | show suggestion details
 `Ctrl+n`                  | ✓                   | next suggestion
 `Ctrl+p`                  | ✓                   | previous suggestion
+`alt+^`                   |                     | join line with previous
+`alt+- alt+^`             |                     | join line with next
 
 ### Selection
 
@@ -127,6 +129,8 @@ Key                       | Implemented         | Description
 - (ctrl+x left) go to previous file in group
 - (ctrl+x right) go to next file in group
 - (ctrl+tab) display available auto completions
+- (alt+^) join line with previous
+- (alt+- alt+^) join line with next
 
 ## Known Issues
 

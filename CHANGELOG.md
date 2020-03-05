@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.9] - 2020-03-05
+- Added keybinding (Alt+<)/(Shift+Alt+,) to go to page top.
+- Added keybinding (Altx+>)/(Shift+Alt+.) to go to page bottom.
+
 ## [1.0.8] - 2020-03-05
 - Region selection now preforms an delete instead of cut when backspace is pressed.
 - Region selection cut, copy will only function if there is an selection range.
