@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -20,6 +20,8 @@
     ],
     "activationEvents": [
         "onCommand:emacsify.motionScrollCenterTopBottom",
+        "onCommand:emacsify.motionMoveUpFiveLines",
+        "onCommand:emacsify.motionMoveDownFiveLines",
         "onCommand:emacsify.regionSelectionToggle",
         "onCommand:emacsify.regionSelectionDisable",
         "onCommand:emacsify.regionSelectionClipboardCutAction",
@@ -29,7 +31,8 @@
         "onCommand:emacsify.editingCapitalizeWordForward",
         "onCommand:emacsify.editingCapitalizeWordBackward",
         "onCommand:emacsify.editingLowercaseWordForward",
-        "onCommand:emacsify.editingLowercaseWordBackward"
+        "onCommand:emacsify.editingLowercaseWordBackward",
+        "onCommand:emacsify.editingJoinLineWithPrevious"
     ],
     "main": "./extension.js",
     "contributes": {
@@ -383,6 +386,17 @@
                 "command": "selectPrevSuggestion",
                 "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
             },
+            {
+                "key": "shift+alt+6",
+                "command": "emacsify.editingJoinLineWithPrevious",
+                "when": "editorTextFocus && !editorReadonly && !emacsifyRegionSelectionMode"
+            },
+            {
+                "key": "alt+- shift+alt+6",
+                "command": "editor.action.joinLines",
+                "when": "editorTextFocus && !editorReadonly && !emacsifyRegionSelectionMode"
+            },
+
 
             {
                 "//": "====================================== Files",

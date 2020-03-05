@@ -83,8 +83,8 @@ Key                       | Implemented         | Description
 `Alt+tab`                 | addition            | show suggestion details
 `Ctrl+n`                  | ✓                   | next suggestion
 `Ctrl+p`                  | ✓                   | previous suggestion
-`alt+^`                   |                     | join line with previous
-`alt+- alt+^`             |                     | join line with next
+`alt+^`                   | ✓                   | join line with previous
+`alt+- alt+^`             | ✓                   | join line with next
 
 ### Selection
 
@@ -138,4 +138,4 @@ Key                       | Implemented         | Description
 - Save command does not always work.
 - When commenting out an selected region, the region selection does not automatically disable.
 - When creating a vertical split, the cursor should say in the current window.
-- When pressing the undo keybinding (ctrl+/) there is a beep sound.
+- When pressing the undo keybinding (ctrl+/) there is a beep sound, related to electron.

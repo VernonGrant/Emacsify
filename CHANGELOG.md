@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.10] - 2020-03-05
+- Added keybinding (Alt+^)/(Shift+Alt+6) to join line with previous
+- Added keybinding (Alt+- Altx+^)/(Shift+Alt+6) to join line with next
+
 ## [1.0.9] - 2020-03-05
 - Added keybinding (Alt+<)/(Shift+Alt+,) to go to page top.
 - Added keybinding (Altx+>)/(Shift+Alt+.) to go to page bottom.
