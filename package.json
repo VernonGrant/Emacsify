@@ -32,7 +32,10 @@
         "onCommand:emacsify.editingCapitalizeWordBackward",
         "onCommand:emacsify.editingLowercaseWordForward",
         "onCommand:emacsify.editingLowercaseWordBackward",
-        "onCommand:emacsify.editingJoinLineWithPrevious"
+        "onCommand:emacsify.editingJoinLineWithPrevious",
+        "onCommand:emacsify.editingMoveUpMultipleLines",
+        "onCommand:emacsify.editingMoveDownMultipleLines",
+        "onCommand:emacsify.workspaceSplitEditorRight"
     ],
     "main": "./extension.js",
     "contributes": {
@@ -396,7 +399,20 @@
                 "command": "editor.action.joinLines",
                 "when": "editorTextFocus && !editorReadonly && !emacsifyRegionSelectionMode"
             },
-
+            {
+                "key": "alt+.",
+                "command": "editor.action.revealDefinition",
+                "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+            },
+            {
+                "key": "alt+- alt+.",
+                "command": "editor.action.goToReferences",
+                "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+            },
+            {
+                "key": "alt+,",
+                "command": "workbench.action.navigateBack"
+            },
 
             {
                 "//": "====================================== Files",
@@ -585,7 +601,7 @@
             },
             {
                 "key": "Ctrl+x 3",
-                "command": "workbench.action.splitEditorRight"
+                "command": "emacsify.workspaceSplitEditorRight"
             },
             {
                 "key": "Ctrl+x o",

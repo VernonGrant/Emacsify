@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.11] - 2020-03-06
+- Added keybinding (Alt+.) to find a tag (a definition).
+- Added keybinding (Alt+- Alt+.) to go/peek references.
+- Added keybinding (Alt+,) to go back.
+- When creating a vertical split, the cursor now go's back to previous editor group, just like in emacs.
+
 ## [1.0.10] - 2020-03-05
 - Added keybinding (Alt+^)/(Shift+Alt+6) to join line with previous
 - Added keybinding (Alt+- Altx+^)/(Shift+Alt+6) to join line with next

@@ -85,6 +85,9 @@ Key                       | Implemented         | Description
 `Ctrl+p`                  | ✓                   | previous suggestion
 `alt+^`                   | ✓                   | join line with previous
 `alt+- alt+^`             | ✓                   | join line with next
+`alt+.`                   | ✓                   | find a tag (a definition)
+`alt+- alt+.`             | ✓                   | go/peek references
+`alt+,`                   | ✓                   | go back
 
 ### Selection
 
@@ -126,16 +129,16 @@ Key                       | Implemented         | Description
 
 ## Next Up
 
-- (ctrl+x left) go to previous file in group
-- (ctrl+x right) go to next file in group
-- (ctrl+tab) display available auto completions
-- (alt+^) join line with previous
-- (alt+- alt+^) join line with next
+- (ctrl+x left) go to previous file in group.
+- (ctrl+x right) go to next file in group.
+- (ctrl+tab) display available auto completions.
+- (C-x C-o) delete blank lines around point.
 
 ## Known Issues
 
+- Some of the commands needs to be called in series. **Important**
+- Keybindings (alt+p) and (alt+n) can not currently be bound, see: https://github.com/microsoft/vscode/issues/41024
 - Capitalization sometimes skips words.
-- Save command does not always work.
 - When commenting out an selected region, the region selection does not automatically disable.
 - When creating a vertical split, the cursor should say in the current window.
 - When pressing the undo keybinding (ctrl+/) there is a beep sound, related to electron.
