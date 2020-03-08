@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 - Commands that need to be called in series now make use of async and await and some callback nesting.
 - Region selection command functions has been restructured.
 - Added some pointless comments to the codebase.
+- Made some readme changes.
 
 ## [1.0.11] - 2020-03-06
 - Added keybinding (Alt+.) to find a tag (a definition).

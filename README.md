@@ -1,10 +1,7 @@
 # Emacsify
 
-An Emacs keymap and configuration for Visual Studio Code.
-
-## Not Production Ready
-
-This extension is still in active development, so use at your own risk!
+An Emacs keymap and configuration for Visual Studio Code. This extension is still
+in active development, so use at your own risk!
 
 Please feel free to recommend keybindings, features or report bugs at the following link:
 [Repository Issues](https://github.com/VernonGrant/Emacsify/issues)
@@ -129,6 +126,7 @@ Key                       | Implemented         | Description
 
 ## Next Up
 
+- Motion commands needs to be redone.
 - (ctrl+x left) go to previous file in group.
 - (ctrl+x right) go to next file in group.
 - (ctrl+tab) display available auto completions.
