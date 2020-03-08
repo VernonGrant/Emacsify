@@ -136,9 +136,9 @@ Key                       | Implemented         | Description
 
 ## Known Issues
 
-- Some of the commands needs to be called in series. **Important**
-- Keybindings (alt+p) and (alt+n) can not currently be bound, see: https://github.com/microsoft/vscode/issues/41024
-- Capitalization sometimes skips words.
+- Using (Alt+b) does not move via word in vscode, this makes things slow.
+- When killing a region selection with (ctrl+k), the region selection does not automatically disable.
 - When commenting out an selected region, the region selection does not automatically disable.
-- When creating a vertical split, the cursor should say in the current window.
+- Keybindings (alt+p) and (alt+n) can not currently be bound, see: https://github.com/microsoft/vscode/issues/41024
+- Capitalization skips words, requires custom implementation.
 - When pressing the undo keybinding (ctrl+/) there is a beep sound, related to electron.

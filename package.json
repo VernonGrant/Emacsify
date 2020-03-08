@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -24,10 +24,10 @@
         "onCommand:emacsify.motionMoveDownFiveLines",
         "onCommand:emacsify.regionSelectionToggle",
         "onCommand:emacsify.regionSelectionDisable",
-        "onCommand:emacsify.regionSelectionClipboardCutAction",
-        "onCommand:emacsify.regionSelectionClipboardPasteAction",
-        "onCommand:emacsify.regionSelectionClipboardCopyAction",
-        "onCommand:emacsify.regionSelectionClipboardDeleteAction",
+        "onCommand:emacsify.regionSelectionDelete",
+        "onCommand:emacsify.regionSelectionClipboardCut",
+        "onCommand:emacsify.regionSelectionClipboardPaste",
+        "onCommand:emacsify.regionSelectionClipboardCopy",
         "onCommand:emacsify.editingCapitalizeWordForward",
         "onCommand:emacsify.editingCapitalizeWordBackward",
         "onCommand:emacsify.editingLowercaseWordForward",
@@ -236,32 +236,32 @@
             },
             {
                 "key": "ctrl+w",
-                "command": "emacsify.regionSelectionClipboardCutAction",
+                "command": "emacsify.regionSelectionClipboardCut",
                 "when": "textInputFocus && !editorReadonly && emacsifyRegionSelectionMode"
             },
             {
                 "key": "ctrl+y",
-                "command": "emacsify.regionSelectionClipboardPasteAction",
+                "command": "emacsify.regionSelectionClipboardPaste",
                 "when": "textInputFocus && !editorReadonly && emacsifyRegionSelectionMode"
             },
             {
                 "key": "alt+w",
-                "command": "emacsify.regionSelectionClipboardCopyAction",
+                "command": "emacsify.regionSelectionClipboardCopy",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
             {
                 "key": "backspace",
-                "command": "emacsify.regionSelectionDeleteAction",
+                "command": "emacsify.regionSelectionDelete",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
             {
                 "key": "ctrl+d",
-                "command": "emacsify.regionSelectionClipboardCutAction",
+                "command": "emacsify.regionSelectionClipboardCut",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
             {
                 "key": "alt+d",
-                "command": "emacsify.regionSelectionClipboardCutAction",
+                "command": "emacsify.regionSelectionClipboardCut",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
 

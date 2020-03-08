@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.12] - 2020-03-08
+- Region selection can now be disabled with both (ctrl+space) and (ctrl+g).
+- Commands that need to be called in series now make use of async and await and some callback nesting.
+- Region selection command functions has been restructured.
+- Added some pointless comments to the codebase.
+
 ## [1.0.11] - 2020-03-06
 - Added keybinding (Alt+.) to find a tag (a definition).
 - Added keybinding (Alt+- Alt+.) to go/peek references.
