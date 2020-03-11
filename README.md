@@ -141,6 +141,7 @@ Key                       | Implemented         | Description
 
 ## Next Up
 
+- (C-x u) undo.
 - (C-x C-o) delete blank lines around point.
 
 ## Known Issues
