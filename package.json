@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -206,12 +206,12 @@
             },
             {
                 "key": "alt+f",
-                "command": "cursorWordEndRightSelect",
+                "command": "cursorWordStartRightSelect",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
             {
                 "key": "alt+b",
-                "command": "cursorWordStartLeftSelect",
+                "command": "cursorWordLeftSelect",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
             {
@@ -606,6 +606,22 @@
             {
                 "key": "Ctrl+x o",
                 "command": "workbench.action.focusNextGroup"
+            },
+            {
+                "key": "ctrl+x right",
+                "command": "workbench.action.nextEditorInGroup"
+            },
+            {
+                "key": "ctrl+x left",
+                "command": "workbench.action.previousEditorInGroup"
+            },
+            {
+                "key": "ctrl+x ,",
+                "command": "workbench.action.nextEditorInGroup"
+            },
+            {
+                "key": "ctrl+x .",
+                "command": "workbench.action.previousEditorInGroup"
             }
         ]
     },

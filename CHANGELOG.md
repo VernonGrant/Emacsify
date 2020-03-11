@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.13] - 2020-03-11
+- The motion commands (Alt+f, Alt+b) has been fixed and now behaves very simulator to emacs.
+- The motion commands for region selection mode has been updated to match their new behavior.
+- The editing commands (Alt+c, Alt+l) including their negatives (Alt+-) has been corrected.
+- Added keybinding (Ctrl+x left) to switch to previous buffer (in group).
+- Added keybinding (Ctrl+x ,) to switch to previous buffer (in group).
+- Added keybinding (Ctrl+x right) to switch to next buffer (in group).
+- Added keybinding (Ctrl+x .) to switch to next buffer (in group).
+
 ## [1.0.12] - 2020-03-08
 - Region selection can now be disabled with both (ctrl+space) and (ctrl+g).
 - Commands that need to be called in series now make use of async and await and some callback nesting.

@@ -6,6 +6,17 @@ in active development, so use at your own risk!
 Please feel free to recommend keybindings, features or report bugs at the following link:
 [Repository Issues](https://github.com/VernonGrant/Emacsify/issues)
 
+## Recommended Settings
+
+For the best experience, please set the below values in your **settings.json**
+
+```json
+{
+    "keyboard.dispatch": "keyCode",
+    "editor.scrollBeyondLastLine": true,
+}
+```
+
 ## Current Key Bindings
 
 ### Motion
@@ -77,7 +88,7 @@ Key                       | Implemented         | Description
 `Alt+u`                   |                     | uppercase word forward
 `Alt+- Alt+u`             |                     | uppercase word backward
 `Alt+tab`                 | ✓                   | trigger suggest
-`Alt+tab`                 | addition            | show suggestion details
+`Alt+tab`                 | ✓ (addition)        | show suggestion details
 `Ctrl+n`                  | ✓                   | next suggestion
 `Ctrl+p`                  | ✓                   | previous suggestion
 `alt+^`                   | ✓                   | join line with previous
@@ -116,6 +127,10 @@ Key                       | Implemented         | Description
 Key                       | Implemented         | Description
 ------------------------- |---------------------| -------------------------
 `Ctrl+g`                  | ✓                   | abort or escape things
+`Ctrl+x left`             | ✓                   | switch to previous buffer (in group)
+`Ctrl+x right`            | ✓                   | switch to next buffer (in group)
+`Ctrl+x ,`                | ✓ (addition)        | switch to previous buffer (in group)
+`Ctrl+x .`                | ✓ (addition)        | switch to next buffer (in group)
 `Alt+x`                   | ✓                   | show commands
 `Ctrl+x 1`                | ✓                   | close other windows
 `Ctrl+x 2`                | ✓                   | split window above
@@ -126,17 +141,14 @@ Key                       | Implemented         | Description
 
 ## Next Up
 
-- Motion commands needs to be redone.
-- (ctrl+x left) go to previous file in group.
-- (ctrl+x right) go to next file in group.
-- (ctrl+tab) display available auto completions.
 - (C-x C-o) delete blank lines around point.
 
 ## Known Issues
 
-- Using (Alt+b) does not move via word in vscode, this makes things slow.
+- Some key combinations can not be bound. see: https://github.com/microsoft/vscode/issues/41024
+    - alt+p
+    - alt+n
+    - alt+u
 - When killing a region selection with (ctrl+k), the region selection does not automatically disable.
 - When commenting out an selected region, the region selection does not automatically disable.
-- Keybindings (alt+p) and (alt+n) can not currently be bound, see: https://github.com/microsoft/vscode/issues/41024
-- Capitalization skips words, requires custom implementation.
 - When pressing the undo keybinding (ctrl+/) there is a beep sound, related to electron.
