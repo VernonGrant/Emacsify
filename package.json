@@ -110,12 +110,12 @@
             },
             {
                 "key": "alt+f",
-                "command": "cursorWordEndRight",
+                "command": "cursorWordStartRight",
                 "when": "textInputFocus && !emacsifyRegionSelectionMode"
             },
             {
                 "key": "alt+b",
-                "command": "cursorWordStartLeft",
+                "command": "cursorWordLeft",
                 "when": "textInputFocus && !emacsifyRegionSelectionMode"
             },
             {
