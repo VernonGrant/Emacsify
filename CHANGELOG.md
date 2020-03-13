@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.14] - 2020-03-13
+- Corrected forward movement via (Alt+f).
+
 ## [1.0.13] - 2020-03-11
 - The motion commands (Alt+f, Alt+b) has been fixed and now behaves very simulator to emacs.
 - The motion commands for region selection mode has been updated to match their new behavior.

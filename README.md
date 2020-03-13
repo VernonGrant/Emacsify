@@ -80,7 +80,7 @@ Key                       | Implemented         | Description
 Key                       | Implemented         | Description
 ------------------------- |---------------------| -------------------------
 `Alt+;`                   | ✓                   | comment/toggle comment
-`Ctrl+/`                  | Partial|Bug         | undo
+`Ctrl+/`                  | Partial/Bug         | undo
 `Alt+c`                   | ✓                   | capitalize word forward
 `Alt+- Alt+c`             | ✓                   | capitalize word backward
 `Alt+l`                   | ✓                   | lowercase word forward

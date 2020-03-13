@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -110,7 +110,7 @@
             },
             {
                 "key": "alt+f",
-                "command": "cursorWordStartRight",
+                "command": "cursorWordRight",
                 "when": "textInputFocus && !emacsifyRegionSelectionMode"
             },
             {
