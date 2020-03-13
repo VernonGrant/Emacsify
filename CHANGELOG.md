@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.15] - 2020-03-13
+- Corrected region selection forward movement via (Alt+f).
+
 ## [1.0.14] - 2020-03-13
 - Corrected forward movement via (Alt+f).
 
