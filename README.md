@@ -141,8 +141,12 @@ Key                       | Implemented         | Description
 
 ## Next Up
 
+- Correct (C-x left, C-x right) binding.
 - (C-x u) undo.
 - (C-x C-o) delete blank lines around point.
+- (C-u) Would like to implement this functionality.
+- Implement a better solution for list all buffers.
+- Complete i-search implementation.
 
 ## Known Issues
 

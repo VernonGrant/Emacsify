@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -435,7 +435,7 @@
             {
                 "//": "====================================== Buffers",
                 "key": "Ctrl+x b",
-                "command": "workbench.action.quickOpen"
+                "command": "workbench.action.showAllEditors"
             },
             {
                 "key": "ctrl+x k",
@@ -617,11 +617,11 @@
             },
             {
                 "key": "ctrl+x ,",
-                "command": "workbench.action.nextEditorInGroup"
+                "command": "workbench.action.previousEditorInGroup"
             },
             {
                 "key": "ctrl+x .",
-                "command": "workbench.action.previousEditorInGroup"
+                "command": "workbench.action.nextEditorInGroup"
             }
         ]
     },

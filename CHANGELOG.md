@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.16] - 2020-03-18
+- Corrected the (Ctrl+x <, Ctrl+x >) bindings.
+- Changed (Ctrl+x b) so it only shows the open buffers.
+
 ## [1.0.15] - 2020-03-13
 - Corrected region selection forward movement via (Alt+f).
 
