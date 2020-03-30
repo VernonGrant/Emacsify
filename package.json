@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.16",
+    "version": "1.0.17",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -28,6 +28,8 @@
         "onCommand:emacsify.regionSelectionClipboardCut",
         "onCommand:emacsify.regionSelectionClipboardPaste",
         "onCommand:emacsify.regionSelectionClipboardCopy",
+        "onCommand:emacsify.regionSelectionCommentLine",
+        "onCommand:emacsify.regionSelectionDeleteAll",
         "onCommand:emacsify.editingCapitalizeWordForward",
         "onCommand:emacsify.editingCapitalizeWordBackward",
         "onCommand:emacsify.editingLowercaseWordForward",
@@ -71,7 +73,6 @@
                 "key": "ctrl+w",
                 "command": ""
             },
-
             {
                 "//": "====================================== Motion",
                 "key": "ctrl+a",
@@ -163,6 +164,16 @@
                 "key": "ctrl+space",
                 "command": "emacsify.regionSelectionToggle",
                 "when": "textInputFocus"
+            },
+            {
+                "key": "alt+;",
+                "command": "emacsify.regionSelectionCommentLine",
+                "when": "editorTextFocus && !editorReadonly && emacsifyRegionSelectionMode"
+            },
+            {
+                "key": "ctrl+k",
+                "command": "emacsify.regionSelectionDeleteAll",
+                "when": "textInputFocus && !editorReadonly && emacsifyRegionSelectionMode"
             },
             {
                 "key": "ctrl+g",
@@ -264,6 +275,16 @@
                 "command": "emacsify.regionSelectionClipboardCut",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
+            {
+                "key": "shift+alt+,",
+                "command": "cursorTopSelect",
+                "when": "textInputFocus && emacsifyRegionSelectionMode"
+            },
+            {
+                "key": "shift+alt+.",
+                "command": "cursorBottomSelect",
+                "when": "textInputFocus && emacsifyRegionSelectionMode"
+            },
 
             {
                 "//": "====================================== Killing and Deleting",
@@ -342,10 +363,15 @@
                 "//": "====================================== Editing",
                 "key": "alt+;",
                 "command": "editor.action.commentLine",
-                "when": "editorTextFocus && !editorReadonly"
+                "when": "editorTextFocus && !editorReadonly && !emacsifyRegionSelectionMode"
             },
             {
                 "key": "ctrl+/",
+                "command": "undo",
+                "when": "textInputFocus && !editorReadonly"
+            },
+            {
+                "key": "ctrl+x u",
                 "command": "undo",
                 "when": "textInputFocus && !editorReadonly"
             },

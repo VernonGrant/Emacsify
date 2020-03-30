@@ -71,8 +71,8 @@ Key                       | Implemented         | Description
 `Ctrl+Alt+r`              |                     | reverse regular expression search
 `Alt+p`                   |                     | select previous search string
 `Alt+n`                   |                     | select next later search string
-`enter`                   | ✓                   | exit incremental search
-`delete`                  |                     | undo effect of last character
+`Enter`                   | ✓                   | exit incremental search
+`Delete`                  |                     | undo effect of last character
 `Ctrl+g`                  | ✓                   | abort current search
 
 ### Editing
@@ -81,6 +81,7 @@ Key                       | Implemented         | Description
 ------------------------- |---------------------| -------------------------
 `Alt+;`                   | ✓                   | comment/toggle comment
 `Ctrl+/`                  | Partial/Bug         | undo
+`Ctrl+x u`                | ✓                   | undo
 `Alt+c`                   | ✓                   | capitalize word forward
 `Alt+- Alt+c`             | ✓                   | capitalize word backward
 `Alt+l`                   | ✓                   | lowercase word forward
@@ -91,17 +92,21 @@ Key                       | Implemented         | Description
 `Alt+tab`                 | ✓ (addition)        | show suggestion details
 `Ctrl+n`                  | ✓                   | next suggestion
 `Ctrl+p`                  | ✓                   | previous suggestion
-`alt+^`                   | ✓                   | join line with previous
-`alt+- alt+^`             | ✓                   | join line with next
-`alt+.`                   | ✓                   | find a tag (a definition)
-`alt+- alt+.`             | ✓                   | go/peek references
-`alt+,`                   | ✓                   | go back
+`Alt+^`                   | ✓                   | join line with previous
+`Alt+- Alt+^`             | ✓                   | join line with next
+`Alt+.`                   | ✓                   | find a tag (a definition)
+`Alt+- Alt+.`             | ✓                   | go/peek references
+`Alt+,`                   | ✓                   | go back
+`Alt+<`                   | ✓                   | go to top of file
+`Alt+>`                   | ✓                   | go to bottom of file
 
 ### Selection
 
 Key                       | Implemented         | Description
 ------------------------- |---------------------| -------------------------
 `Ctrl+space`              | ✓                   | start region selection.
+`Alt+<`                   | ✓                   | go to top of file with selection
+`Alt+>`                   | ✓                   | go to bottom of file with selection
 
 ### Files
 
@@ -142,7 +147,6 @@ Key                       | Implemented         | Description
 ## Next Up
 
 - Correct (C-x left, C-x right) binding.
-- (C-x u) undo.
 - (C-x C-o) delete blank lines around point.
 - (C-u) Would like to implement this functionality.
 - Implement a better solution for list all buffers.
@@ -154,6 +158,4 @@ Key                       | Implemented         | Description
     - alt+p
     - alt+n
     - alt+u
-- When killing a region selection with (ctrl+k), the region selection does not automatically disable.
-- When commenting out an selected region, the region selection does not automatically disable.
 - When pressing the undo keybinding (ctrl+/) there is a beep sound, related to electron.

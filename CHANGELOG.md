@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.17] - 2020-03-30
+- Added keybinding (Alt+<) to go to top of file in selection mode.
+- Added keybinding (Alt+>) to go to bottom of file in selection mode.
+- Added standard (Alt+<, Alt+>) to readme file.
+- Added additional undo binding (Ctrl+x u).
+- When commenting out an selected region, the selection now automatically disables.
+- When killing a region selection with (Ctrl+k), it now automatically disables selection mode.
+
 ## [1.0.16] - 2020-03-18
 - Corrected the (Ctrl+x <, Ctrl+x >) bindings.
 - Changed (Ctrl+x b) so it only shows the open buffers.
