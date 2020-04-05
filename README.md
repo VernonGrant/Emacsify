@@ -1,7 +1,10 @@
 # Emacsify
 
-An Emacs keymap and configuration for Visual Studio Code. This extension is still
-in active development, so use at your own risk!
+An Emacs keymap and configuration for Visual Studio Code. Still in active development,
+so use at your own risk! Welcoming all forms of help to make this extension more awesome!
+Please feel free to summit any question or idea for the extension via [GitHub Issues](https://github.com/VernonGrant/Emacsify/issues/new).
+
+**Still in active development, so use at your own risk!**
 
 Please feel free to recommend keybindings, features or report bugs at the following link:
 [Repository Issues](https://github.com/VernonGrant/Emacsify/issues)
@@ -16,6 +19,41 @@ For the best experience, please set the below values in your **settings.json**
     "editor.scrollBeyondLastLine": true,
 }
 ```
+
+## Known Issues
+
+
+### OSX core key binding issues
+
+Some key combinations can not be bound with the standard input method. see: https://github.com/microsoft/vscode/issues/41024
+
+- alt+p
+- alt+n
+- alt+u
+
+> In Mojave, selecting an Input Source as "Unicode Hex Input" in `[ System Preferences > Keyboard > Input Sources ]` does the trick.
+
+![GitHub Logo](/images/osx-issue.jpg)
+
+> Unfortunately, this is not a great solution for anyone needing a layout other than the basic English one. Some might find it suitable to just use the menu bar to switch to this input source when needed (ie. coding) and back to the native one otherwise.
+
+- Thanks Mark Thomson: [How to disable the special characters shortcut (Cmd+Option+T)](https://apple.stackexchange.com/questions/53417/how-to-disable-the-special-characters-shortcut-cmdoptiont-in-os-x-lion)
+
+
+### Undo Binding Annoying Beep Sound
+
+When pressing the undo keybinding (ctrl+/) there is a beep sound, related to electron.
+
+### Text Transform Needs Work
+
+The current text transform editing bindings does not fully reflect emacs's style and doesn't work very well in some edge cases. This will be fixed in the future. **HELP WANTED**
+
+- `Alt+c`
+- `Alt+- Alt+c`
+- `Alt+l`
+- `Alt+- Alt+l`
+- `Alt+u`
+- `Alt+- Alt+u`
 
 ## Current Key Bindings
 
@@ -44,6 +82,8 @@ Key                       | Implemented         | Description
 `Ctrl+v`                  | ✓                   | scroll to previous screen
 `Ctrl+l`                  | ✓                   | scroll current line to center, top, bottom
 `Alt+g g`                 | ✓                   | goto line
+`Alt+p`                   | ✓ (addition)        | move up by space block
+`Alt+n`                   | ✓ (addition)        | move down by space block
 
 ### Killing and Deleting
 
@@ -86,8 +126,8 @@ Key                       | Implemented         | Description
 `Alt+- Alt+c`             | ✓                   | capitalize word backward
 `Alt+l`                   | ✓                   | lowercase word forward
 `Alt+- Alt+l`             | ✓                   | lowercase word backward
-`Alt+u`                   |                     | uppercase word forward
-`Alt+- Alt+u`             |                     | uppercase word backward
+`Alt+u`                   | ✓ (OSX bug)         | uppercase word forward
+`Alt+- Alt+u`             | ✓ (OSX bug)         | uppercase word backward
 `Alt+tab`                 | ✓                   | trigger suggest
 `Alt+tab`                 | ✓ (addition)        | show suggestion details
 `Ctrl+n`                  | ✓                   | next suggestion
@@ -102,11 +142,13 @@ Key                       | Implemented         | Description
 
 ### Selection
 
-Key                       | Implemented         | Description
-------------------------- |---------------------| -------------------------
-`Ctrl+space`              | ✓                   | start region selection.
-`Alt+<`                   | ✓                   | go to top of file with selection
-`Alt+>`                   | ✓                   | go to bottom of file with selection
+Key                       | Implemented            | Description
+------------------------- |------------------------| -------------------------
+`Ctrl+space`              | ✓                      | start region selection.
+`Alt+<`                   | ✓                      | go to top of file with selection
+`Alt+>`                   | ✓                      | go to bottom of file with selection
+`Alt+p`                   | ✓ (addition - OSX bug) | move up by space block
+`Alt+n`                   | ✓ (addition - OSX bug) | move down by space block
 
 ### Files
 
@@ -144,18 +186,21 @@ Key                       | Implemented         | Description
 `Ctrl+x o`                | ✓                   | switch cursor to another window
 `Ctrl+Alt+v`              |                     | scroll other window
 
+### VSCode Related Bindings
+
+From the emacs manual: Don’t define C-c letter as a key in Lisp programs.
+`Sequences consisting of C-c and a letter (either upper or lower case) are reserved for users;`
+
+Key                       | Implemented         | Description
+------------------------- |---------------------| -------------------------
+`Ctrl+c f`                | ✓                   | toggle fold
+`Ctrl+c d`                | ✓                   | duplicate line or selection
+
+
 ## Next Up
 
+- Complete I-Search implementation.
 - Correct (C-x left, C-x right) binding.
 - (C-x C-o) delete blank lines around point.
 - (C-u) Would like to implement this functionality.
 - Implement a better solution for list all buffers.
-- Complete i-search implementation.
-
-## Known Issues
-
-- Some key combinations can not be bound. see: https://github.com/microsoft/vscode/issues/41024
-    - alt+p
-    - alt+n
-    - alt+u
-- When pressing the undo keybinding (ctrl+/) there is a beep sound, related to electron.

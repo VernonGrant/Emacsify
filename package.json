@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.17",
+    "version": "1.0.18",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -20,8 +20,10 @@
     ],
     "activationEvents": [
         "onCommand:emacsify.motionScrollCenterTopBottom",
-        "onCommand:emacsify.motionMoveUpFiveLines",
-        "onCommand:emacsify.motionMoveDownFiveLines",
+        "onCommand:emacsify.moveUpMultipleLines",
+        "onCommand:emacsify.moveDownMultipleLines",
+        "onCommand:emacsify.moveUpSpaceBlock",
+        "onCommand:emacsify.moveDownSpaceBlock",
         "onCommand:emacsify.regionSelectionToggle",
         "onCommand:emacsify.regionSelectionDisable",
         "onCommand:emacsify.regionSelectionDelete",
@@ -30,9 +32,13 @@
         "onCommand:emacsify.regionSelectionClipboardCopy",
         "onCommand:emacsify.regionSelectionCommentLine",
         "onCommand:emacsify.regionSelectionDeleteAll",
+        "onCommand:emacsify.regionSelectMoveUpSpaceBlock",
+        "onCommand:emacsify.regionSelectMoveDownSpaceBlock",
         "onCommand:emacsify.editingCapitalizeWordForward",
         "onCommand:emacsify.editingCapitalizeWordBackward",
         "onCommand:emacsify.editingLowercaseWordForward",
+        "onCommand:emacsify.editingUppercaseWordForward",
+        "onCommand:emacsify.editingUppercaseWordBackward",
         "onCommand:emacsify.editingLowercaseWordBackward",
         "onCommand:emacsify.editingJoinLineWithPrevious",
         "onCommand:emacsify.editingMoveUpMultipleLines",
@@ -157,6 +163,16 @@
             {
                 "key": "alt-g g",
                 "command": "workbench.action.gotoLine"
+            },
+            {
+                "key": "alt+p",
+                "command": "emacsify.moveUpSpaceBlock",
+                "when": "textInputFocus && !emacsifyRegionSelectionMode"
+            },
+            {
+                "key": "alt+n",
+                "command": "emacsify.moveDownSpaceBlock",
+                "when": "textInputFocus && !emacsifyRegionSelectionMode"
             },
 
             {
@@ -285,6 +301,16 @@
                 "command": "cursorBottomSelect",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
+            {
+                "key": "alt+p",
+                "command": "emacsify.regionSelectionMoveUpSpaceBlock",
+                "when": "textInputFocus && emacsifyRegionSelectionMode"
+            },
+            {
+                "key": "alt+n",
+                "command": "emacsify.regionSelectionMoveDownSpaceBlock",
+                "when": "textInputFocus && emacsifyRegionSelectionMode"
+            },
 
             {
                 "//": "====================================== Killing and Deleting",
@@ -393,6 +419,16 @@
             {
                 "key": "alt+- alt+l",
                 "command": "emacsify.editingLowercaseWordBackward",
+                "when": "textInputFocus && !editorReadonly"
+            },
+            {
+                "key": "alt+u",
+                "command": "emacsify.editingUppercaseWordForward",
+                "when": "textInputFocus && !editorReadonly"
+            },
+            {
+                "key": "alt+- alt+u",
+                "command": "emacsify.editingUppercaseWordBackward",
                 "when": "textInputFocus && !editorReadonly"
             },
             {
@@ -648,6 +684,18 @@
             {
                 "key": "ctrl+x .",
                 "command": "workbench.action.nextEditorInGroup"
+            },
+
+            {
+                "//": "====================================== VSCode Bindings",
+                "key": "ctrl+c f",
+                "command": "editor.toggleFold",
+                "when": "textInputFocus && !editorReadonly && !emacsifyRegionSelectionMode"
+            },
+            {
+                "key": "ctrl+c d",
+                "command": "editor.action.duplicateSelection",
+                "when": "textInputFocus && !editorReadonly"
             }
         ]
     },

@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.18] - 2020-04-05
+- Updated readme regarding VSCode and OSX binding issues.
+- Added keybinding (Alt+p) to move up by space blocks.
+- Added keybinding (Alt+n) to move down by space blocks.
+- Added keybinding (Alt+p) to move up by space blocks in region selection mode.
+- Added keybinding (Alt+n) to move down by space blocks in region selection mode.
+- Added VSCode related binding (Ctrl+c f) to toggle code folding.
+- Added VSCode related binding (Ctrl+c d) to duplicate a line or region selection.
+- Added command and key binding (alt+u) to uppercase word forward.
+- Added command and key binding (alt+- alt+u) to uppercase word backward.
+
 ## [1.0.17] - 2020-03-30
 - Added keybinding (Alt+<) to go to top of file in selection mode.
 - Added keybinding (Alt+>) to go to bottom of file in selection mode.
