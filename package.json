@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.18",
+    "version": "1.0.19",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -22,7 +22,6 @@
         "onCommand:emacsify.motionScrollCenterTopBottom",
         "onCommand:emacsify.moveUpMultipleLines",
         "onCommand:emacsify.moveDownMultipleLines",
-        "onCommand:emacsify.moveUpSpaceBlock",
         "onCommand:emacsify.moveDownSpaceBlock",
         "onCommand:emacsify.regionSelectionToggle",
         "onCommand:emacsify.regionSelectionDisable",
@@ -32,7 +31,6 @@
         "onCommand:emacsify.regionSelectionClipboardCopy",
         "onCommand:emacsify.regionSelectionCommentLine",
         "onCommand:emacsify.regionSelectionDeleteAll",
-        "onCommand:emacsify.regionSelectMoveUpSpaceBlock",
         "onCommand:emacsify.regionSelectMoveDownSpaceBlock",
         "onCommand:emacsify.editingCapitalizeWordForward",
         "onCommand:emacsify.editingCapitalizeWordBackward",
@@ -164,16 +162,6 @@
                 "key": "alt-g g",
                 "command": "workbench.action.gotoLine"
             },
-            {
-                "key": "alt+p",
-                "command": "emacsify.moveUpSpaceBlock",
-                "when": "textInputFocus && !emacsifyRegionSelectionMode"
-            },
-            {
-                "key": "alt+n",
-                "command": "emacsify.moveDownSpaceBlock",
-                "when": "textInputFocus && !emacsifyRegionSelectionMode"
-            },
 
             {
                 "//": "====================================== Selection",
@@ -299,16 +287,6 @@
             {
                 "key": "shift+alt+.",
                 "command": "cursorBottomSelect",
-                "when": "textInputFocus && emacsifyRegionSelectionMode"
-            },
-            {
-                "key": "alt+p",
-                "command": "emacsify.regionSelectionMoveUpSpaceBlock",
-                "when": "textInputFocus && emacsifyRegionSelectionMode"
-            },
-            {
-                "key": "alt+n",
-                "command": "emacsify.regionSelectionMoveDownSpaceBlock",
                 "when": "textInputFocus && emacsifyRegionSelectionMode"
             },
 
