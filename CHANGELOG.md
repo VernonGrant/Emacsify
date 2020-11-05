@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.20] - 2020-11-05
+- Removed unneeded commands.
+
+## [1.0.19] - 2020-11-05
+- Removed keybinding (Alt+n) to move down by space blocks.
+- Removed keybinding (Alt+p) to move up by space blocks in region selection mode.
+- Removed keybinding (Alt+n) to move down by space blocks in region selection mode.
+
 ## [1.0.18] - 2020-04-05
 - Updated readme regarding VSCode and OSX binding issues.
 - Added keybinding (Alt+p) to move up by space blocks.
