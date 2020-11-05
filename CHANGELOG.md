@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.21] - 2020-11-05
+- Cleaned up the Readme file.
+
 ## [1.0.20] - 2020-11-05
 - Removed unneeded commands.
 

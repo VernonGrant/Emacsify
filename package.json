@@ -10,7 +10,7 @@
         "url": "https://github.com/VernonGrant/Emacsify"
     },
     "bugs": "https://github.com/VernonGrant/Emacsify/issues",
-    "version": "1.0.20",
+    "version": "1.0.21",
     "engines": {
         "vscode": "^1.42.0"
     },
